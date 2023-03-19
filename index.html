@@ -8,29 +8,64 @@
   <title>INVO Academy JS Starter with Vite</title>
 </head>
 
-<!-- In order to start your challenge, remove all the content inside <div id="home-page"></div> and start coding :) -->
-
 <body>
   <main id="home-page">
-    <p>starter</p>
-    <div class="card">
-      <!-- <span id="value"></span>
-      <button id="counter" type="button">increment</button> -->
-    </div>
-    <!-- <div>
-      <img src="/public/images/javascript.svg" class="logo vanilla" alt="JavaScript logo" />
-      <h1>INVO Academy JS Starter with Vite</h1>
-      <p>
-        See the README.md for more information on how to start your challenge.
-      </p>
-      <div class="card">
-        <button id="counter" type="button"></button>
-      </div>
-    </div> -->
-  </main>
+    <div class="container" >
 
+      <div>image</div>
+
+      <div class="section-entry">
+        <h1 class="title--primary">Add your informations</h1>
+        <form id="entry-form" class="entry-form">
+          <label for="name" class="entry-form__label entry-form__label--margin" >
+            <span class="entry-form__title">Name on card</span>
+            <input 
+              type="text" 
+              name="name" 
+              id="name"  
+              class="entry-form__input"
+            >
+          </label>
+          <label for="card" class="entry-form__label entry-form__label--margin">
+            <span class="entry-form__title">Card number</span>
+            <input 
+              type="text" 
+              name="card" 
+              id="card" 
+              maxlength=19 
+              class="entry-form__input"
+              >
+          </label>
+          <div class="entry-form__bottom-block">
+            <label for="date" class="entry-form__label entry-form__label--medium">
+              <span class="entry-form__title">Expiry date (MM/YY)</span>
+              <input 
+                type="text" 
+                inputmode="numeric" 
+                name="date" 
+                id="date" 
+                maxlength=5 
+                class="entry-form__input"
+              >
+            </label>
+            <label for="cvv" class="entry-form__label entry-form__label--small">
+              <span class="entry-form__title">CVV</span>
+              <input 
+                type="text" 
+                name="cvv" 
+                id="cvv" 
+                maxlength=3 
+                class="entry-form__input "
+              >
+            </label>
+          </div>
+          <button type="submit" id="submitBtn" disabled class="entry-form-button">Next step</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
   <script type="module" src="/src/main.js"></script>
-  <!-- <script type="module" src="/src/pages/home-page/scripts/home-page.js"></script> -->
 </body>
 
 </html>
