@@ -12,7 +12,9 @@
   }
 
   &__input {
+    height: 16px;
     @extend %input-typografy;
+    padding: 0;
     border: none;
     outline: none;
     background-color: transparent;
