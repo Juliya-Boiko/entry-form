@@ -1,61 +1,65 @@
-
-
 .entry-form {
-  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;
   @media screen and (min-width: $tablet) {
     width: 440px;
   }
+
+  &__title {
+    margin: 0 0 4px 0;
+    @extend %label-typografy;
+  }
+
+  &__input {
+    @extend %input-typografy;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__bottom-flex {
+    margin: 0 0 32px 0;
+    @media screen and (min-width: $mobile) {
+      display: flex;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 24px;
+    border-radius: 18px;
+    outline: 1px solid var(--color-border);
+  }
+
+  &__label--medium {
+    width: 209px;
+    margin: 0 0 14px 0;
+    @media screen and (min-width: $mobile) {
+      margin: 0 14px 0 0;
+    }
+    @media screen and (min-width: $tablet) {
+      width: 261px;
+    }
+  }
+
+  &__label--small {
+    width: 120px;
+    @media screen and (min-width: $tablet) {
+      width: 165px;
+    }
+  }
+
+  &__label--mb {
+    margin: 0 0 14px 0;
+  }
+
+    .entry-form__label-valid {
+    outline: 1px solid var(--color-valid);
+  }
+
+    .entry-form__label-invalid {
+    outline: 1px solid var(--color-error);
+  }
 }
-
-.entry-form__label {
-  display: flex;
-  flex-direction: column;
-  padding: 12px 24px;
-  border-radius: 18px;
-  outline: 1px solid var(--color-border);
-}
-
-.entry-form__label--margin {
-  margin: 0 0 14px 0;
-}
-
-.entry-form__label--medium {
-  max-width: 209px;
-  margin: 0 14px 0 0;
-}
-
-.entry-form__label--small {
- max-width: 120px;
-}
-
-.entry-form__title {
-  margin: 0 0 4px 0;
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: -0.03em;
-  color: var(--color-secondary);
-}
-
-.entry-form__input {
-//  display: block;
-
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: -0.03em;
-  border: none;
-  outline: none;
-  color: var(--color-primary);
-}
-
-
-
-.entry-form__bottom-block {
-  display: flex;
-  justify-content: flex-start;
-  margin:  0 0 32px 0;
-}
-

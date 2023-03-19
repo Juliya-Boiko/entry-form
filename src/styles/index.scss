@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
 @import "./global/normalize.scss";
-@import "./global/fonts.scss";
 @import "./global/root.scss";
 @import "./global/breakpoins.scss";
-@import "./global/utils.scss";
+@import "./global/typografy.scss";
 @import "./components/container.scss";
+@import "./components/logo.scss";
+@import "./components/hero-img.scss";
 @import "./components/section-entry.scss";
-@import "./components/typografy.scss";
 @import "./components/entry-form.scss";
-@import "./components/input.scss";
 @import "./components/button.scss";
+
+
+@import "./components/input.scss";
 
 body {
   margin: 0;
@@ -16,8 +19,7 @@ body {
   color: var(--color-primary);
 }
 
-#home-page {
-  width: 100%;
-  min-height: 100vh;
-  background-color: orchid;
-}
+// #home-page {
+//   // min-height: 100vh;
+//  //background-color: orchid;
+// }

@@ -1,10 +1,14 @@
 export const setValidStyles = (elem) => {
-  if (elem.classList.contains('error')) {
-    elem.classList.replace('error', 'green');
+  const id = elem.getAttribute('name');
+  const parent = document.querySelector(`label[for='${id}']`)
+  if (parent.classList.contains('entry-form__label-invalid')) {
+    parent.classList.replace('entry-form__label-invalid', 'entry-form__label-valid');
   }
-  elem.classList.add('green');
+  parent.classList.add('entry-form__label-valid');
 };
 
 export const setInvalidStyled = (elem) => {
-  elem.classList.replace('green', 'error');
+  const id = elem.getAttribute('name');
+  const parent = document.querySelector(`label[for='${id}']`)
+  parent.classList.replace('entry-form__label-valid', 'entry-form__label-invalid');
 }
