@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INVO Academy JS Starter with Vite</title>
+  <script type="module" crossorigin src="/assets/index-c300c1e5.js"></script>
+  <link rel="stylesheet" href="/assets/index-b28b3a00.css">
+</head>
+<body>
+  <main id="home-page">
+    <div class="container">
+      <!-- HERO-SECTION -->
+      <picture>
+        <source srcset="/assets/hero-desktop-7eda84fa.svg "
+          media="(min-width: 1440px)">
+        <source srcset="/assets/hero-tablet-f8d3ef83.svg "
+          media="(min-width: 834px)">
+        <source srcset="/assets/hero-mobile-bb7578e3.svg "
+          media="(min-width: 320px)">
+        <img src="/assets/hero-mobile-bb7578e3.svg" alt="Cards" class="hero-img">
+      </picture>
+      <!-- FORM-SECTION -->
+      <div class="section-entry">
+        <img src="/assets/logo-ba36d046.svg" alt="Logo" width="82px" class="logo">
+        <h1 class="section-entry__title">Add your informations</h1>
+        <form id="entry-form" class="entry-form">
+          <label for="name" class="entry-form__label entry-form__label--mb">
+            <span class="entry-form__title">Name on card</span>
+            <input type="text" name="name" id="name" class="entry-form__input">
+          </label>
+          <label for="card" class="entry-form__label entry-form__label--mb">
+            <span class="entry-form__title">Card number</span>
+            <input type="text" name="card" id="card" maxlength=19 class="entry-form__input">
+          </label>
+          <div class="entry-form__bottom-flex">
+            <label for="date" class="entry-form__label entry-form__label--medium">
+              <span class="entry-form__title">Expiry date (MM/YY)</span>
+              <input type="text" inputmode="numeric" name="date" id="date" maxlength=5 class="entry-form__input">
+            </label>
+            <label for="cvv" class="entry-form__label entry-form__label--small">
+              <span class="entry-form__title">CVV</span>
+              <input type="text" name="cvv" id="cvv" maxlength=3 class="entry-form__input ">
+            </label>
+          </div>
+          <button type="submit" id="submitBtn" disabled class="entry-form-button">Next step</button>
+        </form>
+      </div >
+    </div>
+  </main>
+  
+</body>
+</html>
