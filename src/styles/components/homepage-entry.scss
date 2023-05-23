@@ -1,0 +1,50 @@
+.homepage-entry {
+  padding: 32px 16px 40px 16px;
+
+  & &__logo {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+  }
+
+  & &__title {
+    max-width: 50%;
+    margin: 0 0 32px 0;
+    @extend %title-typografy;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & &__logo {
+      top: 48px;
+    }
+
+    & &__title {
+      margin: 0 0 48px 0;
+    }
+  }
+    
+  @media screen and (min-width: $desktop) {
+    position: relative;
+    width: 568px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 64px;
+
+    & &__logo {
+      top: 64px;
+      left: 64px;
+      transform: translateX(0);
+    }
+    
+    & &__title {
+      max-width: 252px;
+    }
+  }
+}

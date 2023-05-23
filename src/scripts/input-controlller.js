@@ -1,42 +1,58 @@
 import { nameValidation, dateValidation, cardValidation, cvvValidation } from "./utils/inputValidation";
-import { dateFormatting, cardFormatting } from "./utils/numberformatting";
-import { setInvalidStyled, setValidStyles } from "./utils/styleFormatting";
+import { dateFormatting, cardFormatting } from "./utils/numberFormatting";
+import { setInvalidStyles, setValidStyles } from "./utils/styleFormatting";
 
 const inputName = document.getElementById("name");
 const inputCard = document.getElementById("card");
 const inputDate = document.getElementById("date");
 const inputCvv = document.getElementById("cvv");
 
-const inputNameController = () => {
-  nameValidation(inputName.value) ? setValidStyles(inputName) : setInvalidStyled(inputName);
+// TYPE CONTROLLERS
+const nameController = (e) => {
+  const { target } = e;
+  nameValidation(target.value) ? setValidStyles(target) : setInvalidStyles(target);
 };
 
-const inputCvvController = () => {
-  cvvValidation(inputCvv.value) ? setValidStyles(inputCvv) : setInvalidStyled(inputCvv);
+const inputCardController = (e) => {
+  const { target } = e;
+  target.value = cardFormatting(target.value.replaceAll(" ", ""));
+  cardValidation(target.value) && target.value.length === 19 ? setValidStyles(target) : setInvalidStyles(target);
 };
 
-const inputCardController = () => {
-  if (cardValidation(inputCard.value) && inputCard.value.length === 19) {
-    setValidStyles(inputCard);
-    inputDate.focus()
-  } else {
-    setInvalidStyled(inputCard);
-    inputCard.value = cardFormatting(inputCard.value.replaceAll(" ", ""))
+const inputDateController = (e) => {
+  const { target } = e;
+  target.value = dateFormatting(target.value.replaceAll("/", ""));
+  dateValidation(target.value) && target.value.length === 5 ? setValidStyles(target) : setInvalidStyles(target);
+};
+
+const inputCvvController = (e) => {
+  const { target } = e;
+  cvvValidation(target.value) ? setValidStyles(target) : setInvalidStyles(target);
+};
+
+// NUMBERS & ALPHA CONTROLLERS
+const onlyNumbersController = (e) => {
+  const { key } = e;
+  if(isNaN(key) && key !== 'Backspace') {
+    e.preventDefault();
+  }
+}
+
+const onlyAlphasController = (e) => {
+  const { keyCode } = e;
+  if (keyCode < 65 && keyCode !== 8 && keyCode !== 32 || keyCode > 90 && keyCode !== 8 && keyCode !== 8) {
+    e.preventDefault();
   }
 };
 
-const inputDateController = () => {
-  if (dateValidation(inputDate.value) && inputDate.value.length === 5) {
-    setValidStyles(inputDate);
-    inputCvv.focus();
-  } else {
-    setInvalidStyled(inputDate);
-    inputDate.value = dateFormatting(inputDate.value.replaceAll("/", ""))
-  }
-};
+inputName.addEventListener('keydown', onlyAlphasController);
+inputName.addEventListener('input', nameController);
 
-
-inputName.addEventListener('input', inputNameController);
+inputCard.addEventListener('keydown', onlyNumbersController);
 inputCard.addEventListener("input", inputCardController);
+
+inputDate.addEventListener('keydown', onlyNumbersController);
 inputDate.addEventListener("input", inputDateController);
+
+inputCvv.addEventListener('keydown', onlyNumbersController);
 inputCvv.addEventListener('input', inputCvvController);

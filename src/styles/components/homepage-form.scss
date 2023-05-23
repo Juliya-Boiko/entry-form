@@ -1,0 +1,91 @@
+.homepage-entry-form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+ 
+  & &__title {
+    margin: 0 0 4px 0;
+    @extend %label-typografy;
+  }
+
+  & &__input {
+    height: 16px;
+    @extend %input-typografy;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  & &__bottom-flex {
+    display: flex;
+    margin: 0 0 32px 0;
+  }
+
+  & &__label {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 24px;
+    overflow: hidden;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    outline: 1px solid var(--color-border);
+  }
+
+  & &__label--medium {
+    margin: 0 14px 0 0;
+  }
+
+  & &__label--small {
+    width: 120px;
+  }
+
+  & &__label--mb {
+    margin: 0 0 14px 0;
+  }
+
+  & &__button {
+    padding: 20px 40px;
+    @extend %button-typografy;
+    border: none;
+    outline: none;
+    border-radius: 18px;
+    background-color: var(--color-accent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 16px 48px -16px rgba(0, 0, 0, 0.6);
+    }
+    &:disabled {
+      background-color: var(--color-secondary);
+      box-shadow: none;
+    }
+  }
+
+  @media screen and (min-width: $mobile) {
+    & &__label--medium {
+      width: 209px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 440px;
+    
+    & &__label--medium {
+      width: 261px;
+    }
+
+    & &__label--small {
+      width: 165px;
+    }
+  }
+
+  & &__label-valid {
+    outline: 1px solid var(--color-valid);
+  }
+
+  & &__label-invalid {
+    outline: 1px solid var(--color-error);
+  }
+}

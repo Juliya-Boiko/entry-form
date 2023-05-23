@@ -3,12 +3,9 @@
 @import "./global/root.scss";
 @import "./global/breakpoins.scss";
 @import "./global/typografy.scss";
-@import "./components/container.scss";
-@import "./components/logo.scss";
-@import "./components/hero-img.scss";
-@import "./components/section-entry.scss";
-@import "./components/entry-form.scss";
-@import "./components/button.scss";
+@import "./components/homepage.scss";
+@import "./components/homepage-entry.scss";
+@import "./components/homepage-form.scss";
 
 body {
   margin: 0;

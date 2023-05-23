@@ -3,49 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INVO Academy JS Starter with Vite</title>
+  <title>INVO Academy</title>
 </head>
 <body>
   <main id="home-page">
-    <div class="container">
-      <!-- HERO-SECTION -->
+    <section class="homepage">
       <picture>
-        <source srcset="./src/assets/hero-desktop.svg"
-          media="(min-width: 1440px)">
-        <source srcset="./src/assets/hero-tablet.svg"
-          media="(min-width: 834px)">
-        <source srcset="./src/assets/hero-mobile.svg"
-          media="(min-width: 320px)">
-        <img src="./src/assets/hero-mobile.svg" alt="Cards" class="hero-img">
+        <source srcset="./src/assets/hero-desktop.svg" media="(min-width: 1440px)">
+        <source srcset="./src/assets/hero-tablet.svg" media="(min-width: 834px)">
+        <source srcset="./src/assets/hero-mobile.svg" media="(min-width: 320px)">
+        <img src="./src/assets/hero-mobile.svg" alt="Cards" class="homepage__img">
       </picture>
-      <!-- FORM-SECTION -->
-      <div class="section-entry">
-        <img src="./src/assets/logo.svg" alt="Logo" width="82px" class="logo">
-        <h1 class="section-entry__title">Add your informations</h1>
-        <form id="entry-form" class="entry-form">
-          <label for="name" class="entry-form__label entry-form__label--mb">
-            <span class="entry-form__title">Name on card</span>
-            <input type="text" name="name" id="name" class="entry-form__input">
+
+      <div class="homepage-entry">
+        <img src="./src/assets/logo.svg" alt="Logo" width="82px" class="homepage-entry__logo">
+        <h1 class="homepage-entry__title">Add your informations</h1>
+        <form id="entry-form" class="homepage-entry-form">
+          <label for="name" class="homepage-entry-form__label homepage-entry-form__label--mb">
+            <span class="homepage-entry-form__title">Name on card</span>
+            <input type="text" name="name" id="name" class="homepage-entry-form__input">
           </label>
-          <label for="card" class="entry-form__label entry-form__label--mb">
-            <span class="entry-form__title">Card number</span>
-            <input type="text" name="card" id="card" maxlength=19 class="entry-form__input">
+          <label for="card" class="homepage-entry-form__label homepage-entry-form__label--mb">
+            <span class="homepage-entry-form__title">Card number</span>
+            <input type="text" name="card" id="card" maxlength=19 class="homepage-entry-form__input">
           </label>
-          <div class="entry-form__bottom-flex">
-            <label for="date" class="entry-form__label entry-form__label--medium">
-              <span class="entry-form__title">Expiry date (MM/YY)</span>
-              <input type="text" inputmode="numeric" name="date" id="date" maxlength=5 class="entry-form__input">
+          <div class="homepage-entry-form__bottom-flex">
+            <label for="date" class="homepage-entry-form__label homepage-entry-form__label--medium">
+              <span class="homepage-entry-form__title">Expiry date (MM/YY)</span>
+              <input type="text" name="date" id="date" maxlength=5 class="homepage-entry-form__input">
             </label>
-            <label for="cvv" class="entry-form__label entry-form__label--small">
-              <span class="entry-form__title">CVV</span>
-              <input type="text" name="cvv" id="cvv" maxlength=3 class="entry-form__input ">
+            <label for="cvv" class="homepage-entry-form__label homepage-entry-form__label--small">
+              <span class="homepage-entry-form__title">CVV</span>
+              <input type="text" name="cvv" id="cvv" maxlength=3 class="homepage-entry-form__input ">
             </label>
           </div>
-          <button type="submit" id="submitBtn" disabled class="entry-form-button">Next step</button>
+          <button type="submit" id="submitBtn" disabled class="homepage-entry-form__button">Next step</button>
         </form>
-      </div >
-    </div>
+      </div>
+    </section>
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>
